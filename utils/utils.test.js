@@ -11,6 +11,13 @@ it('should add two numbers', () => {
     // }
 });
 
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+});
+
 it('should square a number', () => {
     var result = utils.square(4);
     expect(result).toBe(16).toBeA('number');
@@ -19,6 +26,13 @@ it('should square a number', () => {
     //     throw new Error(`Expected 44, but got ${result}.`)
     // }
 });
+
+it('should async square a number', (done) => {
+    utils.asyncSquare(4, (product) => {
+        expect(product).toBe(16).toBeA('number');
+        done();
+    })
+})
 
 it('should include a firstName and lastName', () => {
     var user =  {age: 51, location: 'Raleigh'};
